@@ -17,6 +17,7 @@ public class GradeChecker01 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("점수를 입력하세요.");
+        System.out.print("> ");
         int score = sc.nextInt();
 
         if (score >= 90) {

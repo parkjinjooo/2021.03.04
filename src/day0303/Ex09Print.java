@@ -39,11 +39,11 @@ public class Ex09Print {
         String str1 = new String("abc");
         String str2 = new String("DEF");
         
-        // print()는 ()의 출력이 끝나면 출력위피를 바꾸지 않는다. 
+        // print()는 ()의 출력이 끝나면 출력위치를 바꾸지 않는다. 
         System.out.print(str1);
         System.out.print(str2);
         
-        // println()은 ()의 출력이 끝나면 출력위치를 다움 줄의 첫번째 칸으로 옮긴다. 
+        // println()은 ()의 출력이 끝나면 출력위치를 다음 줄의 첫번째 칸으로 옮긴다. 
         System.out.println(str1);
         System.out.println(str2);
         
