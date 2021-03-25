@@ -55,11 +55,12 @@ public class BmiChecker02 {
                 System.out.println("몸무게를 잘못 입력하셨습니다. ");
 
             }
-            sc.close();
+            
 
         } else {
             // 올바르지 않은 키이므로 경고 메시지만 출력한다.
             System.out.println("키를 잘못 입력하셨습니다.");
         }
+        sc.close();
     }
 }

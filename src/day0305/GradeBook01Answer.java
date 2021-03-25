@@ -143,6 +143,6 @@ public class GradeBook01Answer {
             }
 
         }
-
+        sc.close();
     }
 }

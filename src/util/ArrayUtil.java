@@ -1,4 +1,7 @@
 package util;
+
+import day0316_ArrayList.Student;
+
 // 배열의 동적할당과 정적할당
 
 // 기존의 우리가 미리 배열의 크기를 지정하고
@@ -260,6 +263,99 @@ public class ArrayUtil {
     // 8. removeByElement
     public static String[] removeByElement(String[] arr, String element) {
         return removeByIndex(arr, indexOf(arr, element));
+    }
+
+    /** student 배열의 메소드 */
+
+    // 1. size()
+    public static int size(Student[] arr) {
+        return arr.length;
+    }
+
+    // 2. contains()
+    public static boolean contains(Student[] arr, Student s) {
+        for (int i = 0; i < size(arr); i++) {
+            if (arr[i].equals(s)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // 3. indexOf()
+    public static int indexOf(Student[] arr, Student s) {
+        for (int i = 0; i < size(arr); i++) {
+            if (arr[i].equals(s)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    // 4. lastIndexOf()
+    public static int lastIndexOf(Student[] arr, Student s) {
+        for (int i = size(arr) - 1; i >= 0; i--) {
+            if (arr[i].equals(s)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    // 5. add()
+
+    public static Student[] add(Student[] arr, Student s) {
+        Student[] temp = arr;
+        arr = new Student[size(arr) + 1];
+        for (int i = 0; i < size(temp); i++) {
+            arr[i] = temp[i];
+        }
+        arr[size(arr) - 1] = s;
+        return arr;
+    }
+
+    // 6. add()
+
+    public static Student[] add(Student[] arr, int index, Student s) {
+        if (index >= 0 && index <= size(arr)) {
+            Student[] temp = arr;
+            arr = new Student[size(arr) + 1];
+            for (int i = 0; i < index; i++) {
+                arr[i] = temp[i];
+            }
+            arr[index] = s;
+            for (int i = index; i < size(arr); i++) {
+                arr[i + 1] = temp[i];
+            }
+        }
+        return arr;
+    }
+
+    // 7. removeByIndex()
+
+    public static Student[] removeByIndex(Student[] arr, int index) {
+        if (index >= 0 && index < size(arr)) {
+            Student[] temp = arr;
+            arr = new Student[size(arr) - 1];
+
+            for (int i = 0; i < index; i++) {
+                arr[i] = temp[i];
+            }
+
+            for (int i = index; i < size(arr); i++) {
+                arr[i] = temp[i + 1];
+            }
+        }
+        return arr;
+    }
+
+    // 8. removeByElement() 
+    public static Student[] removeByElement(Student[] arr, Student s) {
+
+        return removeByIndex(arr, indexOf(arr, s));
     }
 
 }
